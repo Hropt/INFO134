@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Toaletter</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/indexStyle.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:100,300,400" rel="stylesheet">
+      <script type="text/javascript" src="js/toaletter.js"></script>
+      <script type="text/javascript" src="js/common.js"></script>
+  </head>
+  <body onload="getToilets()">
+    <a id="#anchorTop"</a>
+
+      <div id="nav">
+        <a href="index.html">
+          <h1 id="del1">INFO134</h1>
+        </a>
+        <ul id="navUl">
+          <li><a  href="index.html">HJEM</a></li>
+          <li class="divider">|</li>
+          <li><a id="currentPage" href="toaletter.html">TOALETTER</a></li>
+          <li class="divider">|</li>
+          <li><a href="lekeplasser.html">LEKEPLASSER</a></li>
+          <li class="divider">|</li>
+          <li><a href="favoritt.html">FAVORITT</a></li>
+          <li class="divider">|</li>
+          <li><a href="kodeklubben.html">KODEKLUBBEN</a></li>
+          <button id="mobMenyLukk" onclick="toggleMenu()">LUKK</button>
+        </ul>
+      </div>
+      <button id="mobMeny" onclick="toggleMenu()">MENY</button>
+<div id="wrap">
+  <div id="hscroll">
+    <div id="search">
+      <h1>TOALETTER</h1>
+    <form>
+      <input type="search" placeholder="Søk her..." id="searchStr" onkeyup="setSearchStr()">
+    </form>
+    <button id="advancedSearch" onClick="toggleOpt()">Avansert søk</button>
+
+    <div id="advancedOptions">
+      <div class="opt">Åpen fra:
+          <input type="text" class="openAt" id="hours" onChange="setOpenAt()" placeholder="00" maxlength="2"> -
+          <input type="text" class="openAt" id="minutes" onChange="setOpenAt()" placeholder="00" maxlength="2">
+      </div>
+
+      <div class="opt">Åpen nå: <input type="checkbox" id="open" onChange="setOpenNow()"/></div>
+      <div class="opt">Menn: <input type="checkbox" id="male" onChange="setMale()"></div>
+      <div class="opt">Kvinner: <input type="checkbox" id="female" onChange="setFemale()"></div>
+      <div class="opt">Rullestol: <input type="checkbox" id="wheelchair" onChange="setWheelchair()"></div>
+      <div class="opt">Stellerom: <input type="checkbox" id="stellerom" onChange="setStellerom()"></div>
+      <div class="opt">Maks pris: <input type="text" id="maxPrice" onkeyup="setMaxPrice()" placeholder="Maks pris..."></div>
+      <div class="opt">Gratis: <input type="checkbox" id="free" onChange="setFree()"></div>
+    </div>
+  </div>
+    <div id="list">
+      <p>Loading...</p>
+    </div>
+
+
+  </div>
+  <div id="map"></div>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4ExRLyZHehqrTcjaIpWovOUqnq5rg_OA&callback=initMap">
+  </script>
+</div>
+
+
+  <a id="anchorBottom"></a>
+  </body>
+</html>

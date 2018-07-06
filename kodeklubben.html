@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Kodeklubben</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/indexStyle.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:100,300,400" rel="stylesheet">
+      <script type="text/javascript" src="js/datasett.js"></script>
+      <script type="text/javascript" src="js/common.js"></script>
+
+  </head>
+  <body onload="getSchools()">
+
+    <div id="nav">
+      <a href="index.html">
+        <h1 id="del1">INFO134</h1>
+      </a>
+      <ul id="navUl">
+        <li><a href="index.html">HJEM</a></li>
+        <li class="divider">|</li>
+        <li><a href="toaletter.html">TOALETTER</a></li>
+        <li class="divider">|</li>
+        <li><a href="lekeplasser.html">LEKEPLASSER</a></li>
+        <li class="divider">|</li>
+        <li><a href="favoritt.html">FAVORITT</a></li>
+        <li class="divider">|</li>
+        <li><a id="currentPage" href="kodeklubben.html">KODEKLUBBEN</a></li>
+        <button id="mobMenyLukk" onclick="toggleMenu()">LUKK</button>
+      </ul>
+    </div>
+    <button id="mobMeny" onclick="toggleMenu()">MENY</button>
+</div>
+
+<div id="wrap">
+  <div id="hscroll">
+    <div id="search">
+      <h1>KODEKLUBBEN</h1>
+      <form>
+        <input type="search" placeholder="Søk her..." id="searchStr" onkeyup="setSearchStr()">
+      </form>
+      <br>
+      <select id="sted" name="sted" onchange="setPlace()">
+        <option value="all">Vennligst velg...</option>
+        <option value="Askøy">Askøy</option>
+        <option value="Bergen">Bergen</option>
+        <option value="Odda">Odda</option>
+        <option value="Os">Os</option>
+        <option value="Stord">Stord</option>
+      </select>
+      <br>
+      <button onclick="sortAlphabetically()">Alfabetisk rekkefølge</button>
+      <button onclick="sortStudentically()">Antall elever synkende</button>
+      <button onclick="sortStudenticallyRising()">Antall elever stigende</button>
+
+
+  </div>
+    <div id="list">
+      <p>Loading...</p>
+
+
+    </div>
+
+
+  </div>
+  <div id="info">
+  </div>
+</div>
+  </body>
+</html>
